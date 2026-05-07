@@ -1,0 +1,246 @@
+@use '../utils' as *;
+
+.price {
+	margin-bottom: 120px;
+	padding: 120px 0;
+	border-radius: 72px;
+	background: var(--color-bg-dark);
+	@include respond(laptop) {
+		margin-bottom: 60px;
+		padding: 30px 20px;
+		border-radius: 30px;
+	}
+
+	&__title {
+		color: var(--color-white);
+		text-align: center;
+		font-size: toRem(50);
+		font-weight: 500;
+		line-height: 120%;
+		margin-bottom: 72px;
+		@include respond(tablet) {
+			font-size: toRem(24);
+			margin-bottom: 30px;
+		}
+	}
+
+	&__content {
+		display: flex;
+		justify-content: center;
+		gap: 24px;
+		@include respond(tablet) {
+			flex-direction: column;
+			gap: 12px;
+		}
+	}
+
+	&__book {
+		max-width: 638px;
+		width: 100%;
+		padding: 36px 36px 48px 36px;
+		border-radius: 36px;
+		background: var(--color-white);
+		@include respond(tablet) {
+			max-width: 100%;
+			padding: 12px;
+			border-radius: 16px;
+		}
+	}
+
+	&__book-title {
+		font-size: toRem(32);
+		font-weight: 700;
+		line-height: 112%;
+		margin-bottom: 30px;
+		@include respond(tablet) {
+			font-size: toRem(24);
+			margin-bottom: 16px;
+		}
+	}
+
+	&__book-list {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		padding-bottom: 30px;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		margin-bottom: 30px;
+		@include respond(tablet) {
+			padding-bottom: 12px;
+			margin-bottom: 12px;
+		}
+	}
+
+	&__book-item {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		@include respond(tablet) {
+			flex-direction: column;
+			gap: 8px;
+			align-items: flex-start;
+		}
+
+		.label {
+			max-width: 115px;
+			width: 100%;
+			color: var(--color-secondary);
+			font-weight: 500;
+			@include respond(tablet) {
+				max-width: 100%;
+			}
+		}
+		.value {
+			font-weight: 500;
+		}
+	}
+
+	&__book-summary {
+		@include flex-between;
+		margin-bottom: 30px;
+		@include respond(tablet) {
+			margin-bottom: 16px;
+		}
+		.label {
+			font-size: toRem(20);
+			font-weight: 700;
+			line-height: 125%;
+			@include respond(tablet) {
+				font-size: toRem(16);
+			}
+		}
+		.sum {
+			&__old {
+				display: block;
+				color: var(--color-secondary);
+				font-size: toRem(18);
+				font-weight: 500;
+				line-height: normal;
+				text-decoration-line: line-through;
+				text-align: right;
+				@include respond(tablet) {
+					font-size: toRem(16);
+				}
+			}
+
+			&__new {
+				font-size: toRem(32);
+				font-weight: 700;
+				line-height: normal;
+				text-align: right;
+				@include respond(tablet) {
+					font-size: toRem(24);
+				}
+			}
+		}
+	}
+
+	&__book-btn {
+		@include flex-center;
+		width: 100%;
+		height: 60px;
+		padding: 16px 36px;
+		color: var(--color-white);
+		font-size: toRem(18);
+		font-weight: 700;
+		line-height: 120%;
+		border-radius: 16px;
+		background: var(--color-accent);
+		@include respond(tablet) {
+			height: 48px;
+			padding: 12px 24px;
+			font-size: toRem(16);
+		}
+		@include hover {
+			color: var(--color-primary);
+			background: var(--color-green);
+		}
+	}
+
+	&__consult {
+		max-width: 472px;
+		width: 100%;
+		padding: 36px 36px 48px 36px;
+		border-radius: 36px;
+		background: var(--color-accent);
+		@include respond(tablet) {
+			max-width: 100%;
+			padding: 12px;
+			border-radius: 16px;
+		}
+	}
+
+	&__consult-title {
+		color: var(--color-white);
+		font-size: toRem(32);
+		font-weight: 700;
+		line-height: 112%;
+		margin-bottom: 16px;
+		@include respond(tablet) {
+			font-size: toRem(24);
+			margin-bottom: 8px;
+		}
+	}
+
+	&__consult-text {
+		color: var(--color-white);
+		margin-bottom: 24px;
+		@include respond(tablet) {
+			margin-bottom: 16px;
+		}
+	}
+
+	&__consult-form {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		@include respond(tablet) {
+			gap: 8px;
+		}
+	}
+
+	&__consult-input {
+		display: flex;
+		width: 100%;
+		height: 50px;
+		padding: 10px 20px;
+		border-radius: 16px;
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		background: var(--color-white);
+		outline: none;
+		@include respond(tablet) {
+			height: 48px;
+		}
+	}
+
+	&__consult-btn {
+		@include flex-center;
+		width: 100%;
+		height: 60px;
+		padding: 16px 36px;
+		color: var(--color-white);
+		font-size: toRem(18);
+		font-weight: 700;
+		line-height: 120%;
+		border-radius: 16px;
+		background: var(--color-primary);
+		@include respond(tablet) {
+			font-size: toRem(16);
+			padding: 12px 24px;
+			height: 48px;
+		}
+		@include hover {
+			color: var(--color-primary);
+			background: var(--color-green);
+		}
+	}
+
+	&__consult-agree {
+		color: var(--color-white);
+		text-align: center;
+		font-size: toRem(12);
+		font-weight: 500;
+		line-height: 160%;
+		opacity: 0.8;
+	}
+}

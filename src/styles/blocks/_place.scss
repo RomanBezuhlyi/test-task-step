@@ -1,0 +1,52 @@
+@use '../utils' as *;
+
+.place {
+	margin-bottom: 120px;
+	@include respond(laptop) {
+		margin-bottom: 60px;
+	}
+
+	&__title {
+		text-align: center;
+		font-size: toRem(50);
+		line-height: 120%;
+		margin-bottom: 48px;
+		@include respond(tablet) {
+			font-size: toRem(24);
+			margin-bottom: 16px;
+		}
+	}
+
+	&__gallery {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 8px;
+		@include respond(tablet) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include respond(mobile) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	&__gallery-item {
+		height: 318px;
+		border-radius: 36px;
+		overflow: hidden;
+		@include respond(tablet) {
+			height: 250px;
+		}
+		@include respond(mobile) {
+			height: 200px;
+		}
+		&:hover {
+			img {
+				transform: scale(1.2);
+			}
+		}
+		img {
+			@include object-cover;
+			transition: var(--transition-default);
+		}
+	}
+}

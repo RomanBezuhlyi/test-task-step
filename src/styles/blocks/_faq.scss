@@ -1,0 +1,107 @@
+@use '../utils' as *;
+
+.faq {
+	margin-bottom: 120px;
+	@include respond(laptop) {
+		margin-bottom: 60px;
+	}
+
+	&__title {
+		font-size: toRem(50);
+		line-height: 120%;
+		margin-bottom: 72px;
+		@include respond(tablet) {
+			font-size: toRem(24);
+			margin-bottom: 24px;
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	&__item {
+		padding: 16px 36px;
+		border-radius: 16px;
+		background: var(--color-grey);
+		@include respond(tablet) {
+			padding: 12px 24px;
+		}
+	}
+
+	&__item.is-open {
+		.faq__body {
+			max-height: 300px;
+		}
+
+		.faq__toggle:after {
+			height: 0;
+		}
+	}
+
+	&__head {
+		@include flex-between;
+		gap: 16px;
+		@include respond(tablet) {
+			gap: 8px;
+		}
+	}
+
+	&__question {
+		font-size: toRem(20);
+		line-height: 120%;
+		@include respond(tablet) {
+			font-size: toRem(18);
+		}
+	}
+
+	&__toggle {
+		position: relative;
+		@include flex-center;
+		width: 36px;
+		height: 36px;
+		border-radius: 8px;
+		background: var(--color-white);
+		flex-shrink: 0;
+		@include respond(tablet) {
+			width: 24px;
+			height: 24px;
+		}
+		&:before {
+			content: '';
+			@include absolute-center;
+			display: block;
+			width: 18px;
+			height: 1px;
+			background: var(--color-primary);
+			transition: var(--transition-default);
+			@include respond(tablet) {
+				width: 12px;
+			}
+		}
+		&:after {
+			content: '';
+			@include absolute-center;
+			display: block;
+			width: 1px;
+			height: 18px;
+			background: var(--color-primary);
+			transition: var(--transition-default);
+			@include respond(tablet) {
+				height: 12px;
+			}
+		}
+	}
+
+	&__body {
+		max-height: 0;
+		overflow: hidden;
+		transition: var(--transition-default);
+	}
+
+	&__answer {
+		padding-top: 16px;
+	}
+}

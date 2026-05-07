@@ -1,0 +1,157 @@
+@use '../utils' as *;
+
+.program {
+	margin: 60px 0 120px 0;
+	padding: 120px 0;
+	background: var(--color-grey);
+	border-radius: 72px;
+	@include respond(laptop) {
+		margin: 30px 0 60px 0;
+		padding: 30px 20px;
+		border-radius: 30px;
+	}
+
+	&__title {
+		text-align: center;
+		font-size: toRem(50);
+		line-height: 120%;
+		margin-bottom: 72px;
+		@include respond(tablet) {
+			font-size: toRem(24);
+			margin-bottom: 30px;
+		}
+	}
+
+	&__content {
+		display: flex;
+		gap: 24px;
+		@include respond(laptop) {
+			flex-direction: column-reverse;
+		}
+		@include respond(tablet) {
+			gap: 16px;
+		}
+	}
+
+	&__modules {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		max-width: 800px;
+		width: 100%;
+		flex-shrink: 0;
+		@include respond(laptop) {
+			max-width: 100%;
+		}
+	}
+
+	&__module {
+		padding: 36px;
+		border-radius: 36px;
+		background: var(--color-white);
+		@include respond(tablet) {
+			padding: 24px;
+			border-radius: 24px;
+		}
+	}
+
+	&__module-top {
+		@include flex-between;
+		gap: 16px;
+		margin-bottom: 24px;
+		@include respond(tablet) {
+			gap: 12px;
+			margin-bottom: 16px;
+		}
+	}
+
+	&__module-title {
+		font-size: toRem(24);
+		font-weight: 700;
+		line-height: 120%;
+		@include respond(tablet) {
+			font-size: toRem(18);
+		}
+	}
+
+	&__module-calc {
+		color: var(--color-secondary);
+		text-align: right;
+		font-weight: 700;
+		line-height: 140%;
+	}
+
+	&__module-list {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		@include respond(tablet) {
+			gap: 8px;
+		}
+	}
+
+	&__module-item {
+		width: fit-content;
+		padding: 8px 16px;
+		border-radius: 16px;
+		background: var(--color-grey);
+		@include respond(tablet) {
+			padding: 8px 12px;
+		}
+	}
+
+	&__calc {
+		display: flex;
+		gap: 16px;
+		width: 100%;
+		position: relative;
+		@include respond(tablet) {
+			gap: 8px;
+			flex-direction: column;
+		}
+	}
+
+	&__calc-block {
+		position: sticky;
+		top: 16px;
+		right: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 36px;
+		width: 100%;
+		height: 275px;
+		border-radius: 36px;
+		@include respond(laptop) {
+			position: static;
+			top: 0;
+			padding: 16px;
+			height: auto;
+			flex-direction: row;
+			border-radius: 24px;
+		}
+
+		&:nth-child(1n) {
+			background: var(--color-accent);
+		}
+		&:nth-child(2n) {
+			background: #ffdf51;
+		}
+	}
+
+	&__calc-value {
+		color: var(--color-white);
+		font-size: toRem(66);
+		font-weight: 700;
+		line-height: 90%;
+		margin-bottom: 8px;
+		@include respond(tablet) {
+			font-size: toRem(36);
+			margin-bottom: 4px;
+		}
+	}
+
+	&__calc-label {
+		color: var(--color-white);
+	}
+}

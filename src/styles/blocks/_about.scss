@@ -1,0 +1,65 @@
+@use '../utils' as *;
+
+.about {
+	padding: 60px 0;
+	@include respond(laptop) {
+		padding: 30px 0;
+	}
+	&__container {
+		display: flex;
+		gap: 36px;
+		@include respond(laptop) {
+			flex-direction: column;
+			gap: 16px;
+		}
+	}
+
+	&__content {
+		max-width: 484px;
+		width: 100%;
+		@include respond(laptop) {
+			max-width: 100%;
+		}
+	}
+
+	&__title {
+		font-size: toRem(38);
+		line-height: 120%;
+		margin-bottom: 24px;
+		@include respond(tablet) {
+			font-size: toRem(24);
+			margin-bottom: 16px;
+		}
+	}
+
+	&__text {
+		color: var(--color-secondary);
+		font-size: toRem(18);
+		line-height: 140%;
+		@include respond(tablet) {
+			font-size: toRem(16);
+		}
+	}
+
+	&__img {
+		width: 100%;
+		min-height: 500px;
+		border-radius: 40px;
+		overflow: hidden;
+		@include respond(laptop) {
+			min-height: auto;
+			height: 450px;
+		}
+		@include respond(tablet) {
+			height: 250px;
+		}
+		@include respond(mobile) {
+			height: 220px;
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}

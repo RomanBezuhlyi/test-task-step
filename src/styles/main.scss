@@ -1,0 +1,15 @@
+@use './base/reset';
+@use './base/variables';
+@use './utils/functions' as *;
+@use './utils/mixins' as *;
+@use './base/base';
+
+@use './blocks/header';
+@use './blocks/hero';
+@use './blocks/advantages';
+@use './blocks/about';
+@use './blocks/program';
+@use './blocks/price';
+@use './blocks/place';
+@use './blocks/faq';
+@use './blocks/footer';

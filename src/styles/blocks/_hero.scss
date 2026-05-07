@@ -1,0 +1,136 @@
+@use '../utils' as *;
+
+.hero {
+	position: relative;
+	background: center / cover no-repeat url('../../assets/images/hero-bg.png');
+	border-radius: 60px;
+	padding: 50px 0 150px 0;
+	display: flex;
+	align-items: center;
+	@include respond(laptop) {
+		padding: 50px 15px 0 15px;
+		width: calc(100% + 30px);
+		margin-left: -15px;
+		border-radius: 0;
+	}
+	&__container {
+		@include flex-between;
+		@include respond(laptop) {
+			flex-direction: column;
+		}
+	}
+
+	&__content {
+		max-width: 642px;
+		width: 100%;
+		@include respond(laptop) {
+			max-width: 100%;
+		}
+	}
+
+	&__marks {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		@include respond(tablet) {
+			gap: 12px;
+		}
+	}
+
+	&__mark {
+		@include flex-center;
+		gap: 10px;
+		padding: 12px 24px;
+		font-size: toRem(18);
+		font-weight: 700;
+		line-height: 140%;
+		border-radius: 200px;
+		background: var(--color-white);
+		margin-bottom: 16px;
+		@include respond(tablet) {
+			padding: 8px 16px;
+			font-size: toRem(16);
+		}
+	}
+
+	&__title {
+		font-size: toRem(50);
+		line-height: 120%;
+		margin-bottom: 16px;
+		@include respond(tablet) {
+			font-size: toRem(36);
+		}
+	}
+
+	&__text {
+		font-size: toRem(18);
+		margin-bottom: 36px;
+		@include respond(tablet) {
+			font-size: toRem(16);
+			margin-bottom: 24px;
+		}
+	}
+
+	&__btn {
+		@include flex-center;
+		width: fit-content;
+		height: 60px;
+		padding: 16px 36px;
+		color: var(--color-white);
+		font-size: toRem(18);
+		font-weight: 700;
+		line-height: 120%;
+		border-radius: 12px;
+		background: var(--color-primary);
+		@include respond(tablet) {
+			font-size: toRem(16);
+			height: 48px;
+			padding: 12px 24px;
+		}
+		@include respond(mobile) {
+			width: 100%;
+		}
+		@include hover {
+			color: var(--color-primary);
+			background: var(--color-green);
+		}
+	}
+
+	&__img {
+		position: relative;
+	}
+
+	&__img-tags {
+		position: absolute;
+		right: 0;
+		bottom: 30px;
+		width: 100%;
+		@include flex-center;
+		gap: 12px;
+		flex-wrap: wrap;
+		@include respond(tablet) {
+			gap: 8px;
+		}
+		@include respond(mobile) {
+			gap: 4px;
+			bottom: 8px;
+		}
+	}
+
+	&__img-tag {
+		padding: 12px;
+		@include flex-center;
+		gap: 10px;
+		font-size: toRem(18);
+		border-radius: 100px;
+		background: var(--color-white);
+		@include respond(tablet) {
+			padding: 8px;
+			font-size: toRem(16);
+		}
+		@include respond(mobile) {
+			padding: 4px 8px;
+			font-size: toRem(12);
+		}
+	}
+}
